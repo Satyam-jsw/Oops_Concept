@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long 
+
+using namespace std;
+//In this oops concept we have learn the object and it's Properties to access the function from private and public 
+//using the concept of scope resolution function in c++
+
+class Shop{
+  private:
+   int Price[10]={0};// intialize like this is working
+   int ProductID[10];
+   int count;
+  public:
+   void initCount(){count=0;}
+   void setPrice();
+   void displayPrice();
+};
+//Scope resolution function to excess global variable
+void Shop :: setPrice(){
+    cout<<"Enter your Price "<<endl;
+    cin>>Price[count];
+    cout<<"Enter Your ProductID"<<endl;
+    cin>>ProductID[count];
+    count++;
+    // cout<<count<<endl; // here we used private member like count
+    for(int i=0;i<10;i++){
+        cout<<Price[i]<<' '<<endl;
+    }
+}
+
+void Shop :: displayPrice(){
+    for(int i=0;i<count;i++){
+        cout<<"Price of Product and ProductID :-"<<Price[i]<<" "<<ProductID[i]<<endl;
+    }
+}
+
+
+int main() {
+    Shop hardware;
+    hardware.initCount();//intitialize with zero count=0
+    hardware.setPrice();
+    // hardware.setPrice();
+    hardware.displayPrice();
+    //can't used private variable or function
+}
