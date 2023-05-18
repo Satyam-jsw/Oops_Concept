@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long 
+
+using namespace std;
+// Oops 
+// static variable and methods / function
+
+class Shop{
+  private:
+   int itemId;
+   static int count;
+  public:
+   void setdata(){
+        cout<<"Enter a ItemId "<<endl;
+         cin>>itemId;
+         count++;
+   }
+   void getdata(){
+       cout<<"The item of itemID "<<itemId<<endl<<"The numebr of item is "<<count<<endl;
+       
+   }
+  static void getCount(){
+       cout<<"The value of count "<<count<<endl;
+    //   cout<<itemId;// geting an ERROR IF USING HERE ID
+   }
+   
+};
+int Shop :: count;   // by default the value of count=0
+// int Shop :: count=10;   // Initialize like this one
+int main() {
+   
+    Shop Hardware,jewellery;
+    Hardware.setdata();
+    jewellery.getdata();
+    // Shop :: getCount();------>>>using like this then we have used static void getCount(){...}
+     Hardware.setdata();
+    Hardware.getdata();
+    Hardware.getCount();
+     Hardware.setdata();
+    Hardware.getdata();
+    Hardware.getCount();
+    
+    
+ 
+}
